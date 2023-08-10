@@ -1,7 +1,55 @@
+
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Pet Owner Register</title>
+    <link rel="stylesheet" href="../css/petowner_register_style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="registration-form">
+            <h2>Pet Owner Registration</h2>
+            <form action="petownerregistration.php" method="post">
+                <div class="input-group">    
+                    <label for="firstname">First Name:</label>
+                    <input type="text" id="firstname" name="firstname" required><br>
+                </div>
+                <div class="input-group">    
+                    <label for="lastname">Last Name:</label>
+                    <input type="text" id="lastname" name="lastname" required><br>
+                </div>
+                <div class="input-group">    
+                    <label for="middleinitial">Middle Initial:</label>
+                    <input type="text" id="middleinitial" name="middleinitial" required><br>       
+                </div>
+                <div class="input-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="input-group">
+                    <label for="contactno">Contact No:</label>
+                    <input type="text" id="contactno" name="contactno" required><br>
+                </div>
+                <div class="input-group">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required><br>
+                </div>
+                <button type="submit" class="submit-button">Register</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
     <title>Staff Registration</title>
+    <link rel="stylesheet" href="../css/petowner_register_style.css">
 </head>
 <body>
     <h2>Register</h2>
@@ -31,4 +79,4 @@
         <input type="submit" value="Register">
     </form>
 </body>
-</html>
+</html> -->
