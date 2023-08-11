@@ -4,6 +4,20 @@
 <head>
     <title>Pet Owner Register</title>
     <link rel="stylesheet" href="../css/petowner_register_style.css">
+
+    <style>
+        .password-input {
+            position: relative;
+        }
+
+        .eye-icon {
+            position: absolute;
+            right: -10px;
+            top: 40%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -29,6 +43,7 @@
                 <div class="input-group">
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="password" required>
+                    <span class="eye-icon" onclick="togglePasswordVisibility()">&#128065;</span>
                 </div>
                 <div class="input-group">
                     <label for="contactno">Contact No:</label>
@@ -42,6 +57,16 @@
             </form>
         </div>
     </div>
+    <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+            } else {
+                passwordInput.type = 'password';
+            }
+        }
+    </script>
 </body>
 </html>
 

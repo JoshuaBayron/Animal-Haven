@@ -22,6 +22,20 @@
 <head>
     <title>Pet Owner Login</title>
     <link rel="stylesheet" href="../css/petownerstyle.css">
+
+    <style>
+        .password-input {
+            position: relative;
+        }
+
+        .eye-icon {
+            position: absolute;
+            right: 250px;
+            top: 57%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <img src="../img/scorpion-removebg.png" alt="tarantula" class="tarantula" style="width: 600px; float: left;">
@@ -41,11 +55,22 @@
                 <div class="input-group">    
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="password" class="input-field" required><br>
+                    <span class="eye-icon" onclick="togglePasswordVisibility()">&#128065;</span>
                 </div>        
                 <input type="submit" value="Login" class="submit-button">
     </form>
         </div>
         </div>
     </div>
+     <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+            } else {
+                passwordInput.type = 'password';
+            }
+        }
+    </script>
 </body>
 </html>
