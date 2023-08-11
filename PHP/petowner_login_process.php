@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Password is correct, set session variables
             $_SESSION['Customerid'] = $row['CustomerID'];
             $_SESSION['UserName'] = $row['username'];
-            header("Location: ../customer-dashboard/index.php"); // Redirect to dashboard or home page
+            header("Location: ../customer-dashboard/user.html"); // Redirect to dashboard or home page
         } else {
             echo "Incorrect password.";
         }
