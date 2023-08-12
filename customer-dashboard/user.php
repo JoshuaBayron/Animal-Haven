@@ -19,7 +19,7 @@ if ($conn->connect_error) {
 
 $username = $_SESSION['username'];
 
-$sql = "SELECT * FROM customertbl WHERE username = '$username'";
+$sql = "SELECT * FROM customertbl WHERE UserName = '$username'";
 $result = $conn->query($sql);
 
 if ($result->num_rows === 1) {
@@ -28,8 +28,21 @@ if ($result->num_rows === 1) {
     echo "Error retrieving user data.";
 }
 
+
 $conn->close();
 ?>
+<!--
+  Columns for customer tbl
+  CustomerID
+  FirstName
+  LastName
+  MiddleInitial
+  UserName
+  Password
+  ContactNumber
+  Address
+  Email
+  -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -105,7 +118,7 @@ $conn->close();
                 <div class="profile-image-container">
                   <img id="profile-image" src="../img/logo.png" alt="Profile Picture">
                   <div class="edit-icon" id="edit-icon">&#9998;</div>
-                   <h1>Hi, <?php echo $user['FirstName']; ?>!</h1>
+                  <h1>Welcome, <?php echo $user['FirstName']; ?>!</h1>
                 </div>
               </div>
               <div class="modal" id="image-modal">
@@ -145,8 +158,8 @@ $conn->close();
             <div class="text-center" style="display: inline-block;">
               <button type="reset">Reset</button>
             </div>
-             <div class="text-center" style="display: inline-block;">
-              <button >Logout</button>
+            <div class="text-center" style="display: inline-block;">
+              <p><a href="../PHP/pet_owner_logout.php">Logout</a></p>
             </div>
           </form>
         </div>
