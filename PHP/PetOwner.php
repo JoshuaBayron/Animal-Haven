@@ -1,22 +1,3 @@
-<!--<!DOCTYPE html>
-<html>
-<head>
-    <title>Pet Owner</title>
-</head>
-<body>
-    <h2>Login</h2>
-    <form action="petowner_login_process.php" method="post">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br>
-
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br>
-
-        <input type="submit" value="Login">
-    </form>
-</body>
-</html>-->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,3 +55,21 @@
     </script>
 </body>
 </html>
+<!--<!DOCTYPE html>a
+<html>
+<head>
+    <title>Pet Owner</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form action="petowner_login_process.php" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>-->
