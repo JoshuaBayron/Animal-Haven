@@ -1,12 +1,23 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['Customerid'])) {
-    header("Location: ../PHP/PetOwner.php");
+// Check if user is logged in
+if (!isset($_SESSION["username"])) {
+    // Display login form or appropriate content here
+    header("Location: ../PHP/PetOwner.php"); // Redirect to the account page
     exit();
+} else {
+    $loggedInUserUserName = $_SESSION["username"];
+    
+    // Retrieve user account information from the database based on $loggedInUserId
+    
+    // Display account information
+    echo "Account Information for: " . $_SESSION["username"];
+    
+    // Provide a link to the dashboard
+    echo "<p><a href='../customer-dashboard/user.php'>Go to Account</a></p>";
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -53,15 +64,20 @@ if (!isset($_SESSION['Customerid'])) {
 
       <div class="profile">
         <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Alex Smith</a></h1>
+        <h1 class="text-light"><a href="index.php">
+          <?php if (!isset($_SESSION["username"])) {
+    // Display login form or appropriate content here
+    header("Location: ../PHP/PetOwner.php"); // Redirect to the account page
+    exit();
+} echo "" . $_SESSION["username"];   ?></a></h1>
       </div>
 
       <nav id="navbar" class="nav-menu navbar">
         <ul>
-          <li><a href="user.html" class="nav-link scrollto"><i class="bx bx-user"></i> <span>My Account</span></a></li>
+          <li><a href="user.php" class="nav-link scrollto"><i class="bx bx-user"></i> <span>My Account</span></a></li>
           <li><a href="#pet-information" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Pet Information</span></a></li>
           <li><a href="#pet-status" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Pet Status</span></a></li>
-          <li><a href="add.html" class="nav-link scrollto"><i class="bx bx-add-to-queue"></i> <span>Add Pet</span></a></li>
+          <li><a href="add.php" class="nav-link scrollto"><i class="bx bx-add-to-queue"></i> <span>Add Pet</span></a></li>
         </ul>
       </nav><!-- .nav-menu -->
     </div>
@@ -145,8 +161,8 @@ if (!isset($_SESSION['Customerid'])) {
     </section><!-- End Contact Section -->
     
   </main><!-- End #main -->
-  <!-- <h2>Welcome, !<?php echo $_SESSION['username']; ?>!</h2>
-    <a href="logout.php">Logout</a> -->
+  
+   
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->

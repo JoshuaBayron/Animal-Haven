@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+//check if user is logged in
 if (!isset($_SESSION['username'])) {
     header("Location: ../PHP/PetOwner.php");
     exit();
@@ -85,14 +86,22 @@ $conn->close();
 
       <div class="profile">
         <img src="../img/logo.png" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">PawPointment</a></h1>
+        <h1 class="text-light"><a href="index.php">
+          <?php if (!isset($_SESSION["username"])) {
+            // Display login form or appropriate content here
+            header("Location: ../PHP/PetOwner.php"); // Redirect to the account page
+            exit();
+            } 
+            echo "" . $_SESSION["username"];   ?>
+              
+        </a></h1>
       </div>
 
       <nav id="navbar" class="nav-menu navbar">
         <ul>
-          <li><a href="user.html" class="nav-link scrollto active"><i class="bx bx-user"></i> <span>My Account</span></a></li>
-          <li><a href="index.html" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Dashboard</span></a></li>
-          <li><a href="add.html" class="nav-link scrollto"><i class="bx bx-add-to-queue"></i> <span>Add Pet</span></a></li>
+          <li><a href="user.php" class="nav-link scrollto active"><i class="bx bx-user"></i> <span>My Account</span></a></li>
+          <li><a href="index.php" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Dashboard</span></a></li>
+          <li><a href="add.php" class="nav-link scrollto"><i class="bx bx-add-to-queue"></i> <span>Add Pet</span></a></li>
         </ul>
       </nav><!-- .nav-menu -->
     </div>
