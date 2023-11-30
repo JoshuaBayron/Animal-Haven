@@ -128,7 +128,7 @@
                 $searchQuery = isset($_GET["search_query"]) ? $_GET["search_query"] : '';
 
                 // Connect to the MySQL database.
-                $db = new PDO('mysql:host=localhost;dbname=pawheaven', 'root', '');
+                $db = new PDO('mysql:host=localhost;dbname=id21596882_pawheaven', 'id21596882_root', 'Animal@123');
 
                 // Create a SQL query to select the services that match the search query.
                 $sql = "SELECT services_id, services_title, services_description, services_image FROM services WHERE services_title LIKE '%$searchQuery%'";
@@ -177,9 +177,9 @@
                     ini_set('display_errors', 1);
 
                     $servername = "localhost";
-                    $username = "root";
-                    $password = "";
-                    $dbname = "pawheaven";
+                    $username = "id21596882_root";
+                    $password = "Animal@123";
+                    $dbname = "id21596882_pawheaven";
 
                     $conn = new mysqli($servername, $username, $password, $dbname);
 
