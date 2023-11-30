@@ -10,9 +10,9 @@ if(isset($_POST['submit'])) {
 
     // Database configuration
     $host = "localhost";
-    $username = "root"; // Change this to your database username
-    $password = ""; // Change this to your database password
-    $dbname = "pawheaven";
+    $username = "id21596882_root"; // Change this to your database username
+    $password = "Animal@123"; // Change this to your database password
+    $dbname = "id21596882_pawheaven";
 
     // Create a database connection
     $con = new mysqli($host, $username, $password, $dbname);

@@ -1,6 +1,6 @@
 <?php
 // Establish a database connection (you might need to customize these parameters)
-$conn = mysqli_connect("localhost", "username", "password", "pawheaven");
+$conn = mysqli_connect("localhost", "id21596882_root", "Animal@123", "id21596882_pawheaven");
 
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
