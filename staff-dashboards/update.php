@@ -3,7 +3,7 @@
 <?php
 $host = "localhost";
 $username = "id21596882_root";
-$password = "Animal@123";
+$password = "Animal@1233";
 $database = "id21596882_pawheaven";
 
 // Check if the form is submitted
