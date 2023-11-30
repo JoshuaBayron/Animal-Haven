@@ -13,7 +13,7 @@
     </thead>
     <tbody>
         <?php 
-        $conn = mysqli_connect("localhost", "root", "", "pawheaven");
+        $conn = mysqli_connect("localhost", "id21596882_root", "Animal@123", "id21596882_pawheaven");
 
         if (!$conn) {
             die("Connection failed: " . mysqli_connect_error());

@@ -17,7 +17,7 @@
                 <tbody>
                 <?php
 
-                $connect = mysqli_connect("localhost", "root", "", "pawheaven");
+                $connect = mysqli_connect("localhost", "id21596882_root", "Animal@123", "id21596882_pawheaven");
                 $staff_ID = $_SESSION['staff_id'];
                 $search_query = isset($_GET["search_query"]) ? mysqli_real_escape_string($connect, $_GET["search_query"]) : '';
 
