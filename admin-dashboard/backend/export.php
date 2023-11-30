@@ -1,6 +1,6 @@
 <?php
 require('fpdf/fpdf.php');
-$connect = mysqli_connect("localhost", "id21596882_root", "Animal@123", "id21596882_pawheaven");
+$connect = mysqli_connect("localhost", "root", "", "pawheaven");
 
 $doctorData = [];
 $output = '';

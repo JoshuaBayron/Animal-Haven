@@ -17,7 +17,7 @@
 			<div class="wrap-login100">
 			<?php
 
-			$conn = mysqli_connect("localhost", "id21596882_root", "Animal@123", "id21596882_pawheaven");
+			$conn = mysqli_connect("localhost", "root", "", "pawheaven");
 
 			if (!$conn) {
 				die("Connection failed: " . mysqli_connect_error());
