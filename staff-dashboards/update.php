@@ -2,9 +2,9 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
 <?php
 $host = "localhost";
-$username = "root";
-$password = "";
-$database = "pawheaven";
+$username = "id21596882_root";
+$password = "Animal@123";
+$database = "id21596882_pawheaven";
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

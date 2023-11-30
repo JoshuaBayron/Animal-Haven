@@ -1,7 +1,7 @@
 <?php
 // Create a PDO database connection (replace with your actual database credentials)
 try {
-    $db = new PDO("mysql:host=localhost;dbname=pawheaven", "username", "password");
+    $db = new PDO("mysql:host=localhost;dbname=id21596882_pawheaven", "id21596882_root", "Animal@123");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     echo "Error connecting to the database: " . $e->getMessage();
