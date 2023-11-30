@@ -138,7 +138,10 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 function registerCustomer($conn, $username, $password){
 
-      require 'C:\xampp\htdocs\PawPointment-Final\PawPointment\phpmailer\phpmailer\vendor\autoload.php'; // Adjust the path to autoload.php
+      // require 'C:\xampp\htdocs\PawPointment-Final\PawPointment\phpmailer\phpmailer\vendor\autoload.php'; // Adjust the path to autoload.php
+      require 'C:\Users\Acer\OneDrive\Documents\GitHub\thesis\PHPMailer-master\src\Exception.php';
+      require 'C:\Users\Acer\OneDrive\Documents\GitHub\thesis\PHPMailer-master\src\PHPMailer.php';
+      require 'C:\Users\Acer\OneDrive\Documents\GitHub\thesis\PHPMailer-master\src\SMTP.php';
 
         function sendemail_verify($fname,$username,$verify_token)
     {
