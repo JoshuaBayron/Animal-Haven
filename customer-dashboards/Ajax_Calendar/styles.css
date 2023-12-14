@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+     .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    #calendar {
+        width: 100%; /* Adjust the width as needed */
+        height: 600px; /* Adjust the height as needed */
+    }
+
+    #addEventForm {
+        width: 25%; /* Adjust the width as needed */
+    }
+
+    #addEventForm form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+#addEventForm label {
+    margin-bottom: 5px;
+}
+
+#addEventForm input {
+    margin-bottom: 10px;
+}
+
+#addEventForm button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#addEventForm button:hover {
+    background-color: #45a049;
+}
