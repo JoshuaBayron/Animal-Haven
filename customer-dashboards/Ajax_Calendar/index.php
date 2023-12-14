@@ -14,6 +14,7 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+
     <script src="app.js"></script>
     <style>
         .container {
@@ -112,15 +113,15 @@
                   <option value="11:00">11:00 AM</option>
                   <option value="11:30">11:30 AM</option>
 
-                  <option value="01:00">01:00 PM</option>
-                  <option value="01:30">01:30 PM</option>
-                  <option value="02:00">02:00 PM</option>
-                  <option value="02:30">02:30 PM</option>
-                  <option value="03:00">03:00 PM</option>
-                  <option value="03:30">03:30 PM</option>
-                  <option value="04:00">04:00 PM</option>
-                  <option value="04:30">04:30 PM</option>
-                  <option value="05:30">05:30 PM</option>
+                  <option value="13:00">01:00 PM</option>
+                  <option value="13:30">01:30 PM</option>
+                  <option value="14:00">02:00 PM</option>
+                  <option value="14:30">02:30 PM</option>
+                  <option value="15:00">03:00 PM</option>
+                  <option value="15:30">03:30 PM</option>
+                  <option value="16:00">04:00 PM</option>
+                  <option value="16:30">04:30 PM</option>
+                  <option value="17:30">05:30 PM</option>
 
                   <!-- Add more options as needed -->
                 </select> 
@@ -130,6 +131,12 @@
             </form>
         </div>
     </div>
+     <!-- Legend for the calendar -->
+<div style="margin-top: 20px; text-align: center; font-size: 24px;">
+    <span style="color: green; padding-right: 15px; font-size: 40px;">&#9679;</span> Available Slots
+    <span style="color: red; padding: 0 15px; font-size: 40px;">&#9679;</span> Full Slots
+    <span style="color: yellow; padding-left: 15px; font-size: 30px;">&#9679;</span> Holidays
+</div>
      <script>
      // Logic to disable options based on existing database entries
   const dateSelect = document.getElementById('date');

@@ -10,6 +10,10 @@ $(document).ready(function() {
         eventAfterAllRender: function(view) {
             highlightBusyDays();
         },
+          eventRender: function (event, element) {
+            var formattedTime = moment(event.start).format('h:mmA');
+            element.find('.fc-time').html(formattedTime);
+        },
         events: {
             url: 'events.php', // Change this to the endpoint that fetches events from the server
             type: 'GET',
@@ -20,6 +24,7 @@ $(document).ready(function() {
                 alert('Error fetching events');
             }
         }
+
     });
 
 // Add Event function
@@ -31,6 +36,7 @@ window.addEvent = function() {
     var start_event_date = $('#date').val();
     var start_event_time = $('#time').val();
 
+    
     // Combine date and time for the full start event datetime
     var start_event_datetime = start_event_date + ' ' + start_event_time;
 
@@ -97,22 +103,28 @@ window.addEvent = function() {
             }
         });
 
-        // Highlight days with more than or equal to 20 events
-        Object.keys(dateCounts).forEach(function(date) {
-            var momentDate = moment(date);
+ // Loop through all days in the calendar
+    $('.fc-day').each(function(index, element) {
+        var momentDate = moment($(element).attr('data-date'));
 
-            // Check if the date is a holiday
-            var holidayName = isHoliday(momentDate.format('YYYY-MM-DD'));
-            if (holidayName) {
-                var $dayCell = $('.fc-day[data-date="' + momentDate.format('YYYY-MM-DD') + '"]');
-                $dayCell.css('background-color', '#7bdd6d'); // Set background color for holidays
-                // $dayCell.append('<div class="holiday-name">' + holidayName + '</div>'); // Display holiday name
-            } else if (dateCounts[date] >= 17) {
-                $('.fc-day[data-date="' + momentDate.format('YYYY-MM-DD') + '"]').css('background-color', '#ff2b2b');
-            } else {
-                $('.fc-day[data-date="' + momentDate.format('YYYY-MM-DD') + '"]').css('background-color', ''); // Reset background color
-            }
-        });
+        // Check if the date is in the past of today
+        if (momentDate.isBefore(today, 'day')) {
+            // Remove background color for days in the past
+            $(element).css('background-color', '');
+            return; // Skip further processing for past days
+        }
+
+        // Check if the date is a holiday
+        var holidayName = isHoliday(momentDate.format('YYYY-MM-DD'));
+        if (holidayName) {
+            $(element).css('background-color', '#ffff99'); // Set background color for holidays
+        } else if (dateCounts[momentDate.format('YYYY-MM-DD')] >= 17) {
+            $(element).css('background-color', '#ff6e6e'); // Set background color for full slots
+        } else {
+            // Set a default background color for other days (e.g., yellow)
+            $(element).css('background-color', '#7bdd6d');
+        }
+    });
     }
 
     // Function to check if a date is a holiday
